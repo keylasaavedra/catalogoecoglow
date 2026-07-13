@@ -1,0 +1,48 @@
+==========================================================
+  CÓMO PUBLICAR TU CATÁLOGO ECOGLOW  (sin usar la terminal)
+==========================================================
+
+Esta carpeta ya tiene TODO tu catálogo listo. Solo falta subirlo.
+
+------------------------------------------
+PASO 1 — Cuenta de GitHub (gratis)
+------------------------------------------
+  - Entra a  github.com  y crea una cuenta (o inicia sesión).
+
+------------------------------------------
+PASO 2 — Crear el repositorio y subir la carpeta
+------------------------------------------
+  - Arriba a la derecha, clic en el "+"  >  "New repository".
+  - Nombre: catalogo-ecoglow   (déjalo en "Public").
+  - NO marques "Add a README".  Clic "Create repository".
+  - En la página que aparece, busca el enlace azul
+    "uploading an existing file"  (o el botón "Add file" > "Upload files").
+  - Abre esta carpeta en tu computador, selecciona TODO lo de adentro
+    (las carpetas app, components, lib, public y todos los archivos)
+    y arrástralo a la ventana de GitHub.
+  - Espera a que suban y abajo clic en "Commit changes".
+
+------------------------------------------
+PASO 3 — Publicar con Vercel (gratis)
+------------------------------------------
+  - Entra a  vercel.com  >  "Sign Up"  >  "Continue with GitHub".
+  - Clic "Add New..."  >  "Project".
+  - Junto a tu repo "catalogo-ecoglow", clic "Import".
+  - No cambies nada. Clic "Deploy".
+  - Espera 1 a 2 minutos.
+
+------------------------------------------
+PASO 4 — Tu link para compartir
+------------------------------------------
+  - Vercel te da una dirección tipo:
+        https://catalogo-ecoglow.vercel.app
+  - ¡Ese es el link que compartes por WhatsApp, Instagram, etc.!
+
+------------------------------------------
+PARA CAMBIOS FUTUROS
+------------------------------------------
+  - Editas el archivo en GitHub (o subes uno nuevo) y Vercel
+    actualiza el catálogo solo, en 1-2 minutos.
+
+Antes de compartir, revisa en lib/config.ts que tu Instagram
+(enlace) y tu número de WhatsApp estén correctos.
