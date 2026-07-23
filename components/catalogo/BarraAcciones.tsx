@@ -1,12 +1,22 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { Icon } from "@/components/ui/Icon";
+import { CONFIG } from "@/lib/config";
+import { construirMensaje, linkWhatsApp, resolverVendedor } from "@/lib/whatsapp";
 
-/** Barra bajo el encabezado: compartir el catálogo y descargarlo en PDF. */
-export function BarraAcciones() {
+/** Barra bajo el encabezado: compartir, descargar en PDF y contactar por WhatsApp. */
+export function BarraAcciones({ vendedorSlug }: { vendedorSlug?: string | null }) {
   const [copiado, setCopiado] = useState(false);
+
+  const vendedor = resolverVendedor(CONFIG, vendedorSlug);
+  const numero = vendedor ? vendedor.whatsapp : CONFIG.marca.whatsappPrincipal;
+  const mensajeContacto = construirMensaje(
+    "{saludo}vi tu catálogo y quiero más información.",
+    "",
+    vendedor?.nombre.split(" ")[0]
+  );
+  const linkContacto = linkWhatsApp(numero, mensajeContacto);
 
   async function compartir() {
     const url = typeof window !== "undefined" ? window.location.href.split("?")[0] : "";
@@ -36,9 +46,9 @@ export function BarraAcciones() {
       <button onClick={() => window.print()} className="btn-ghost">
         <Icon name="lucide:download" size={18} /> Descargar en PDF
       </button>
-      <Link href="/configurar" className="btn-ghost">
-        <Icon name="lucide:settings-2" size={18} /> Es mío: configurarlo
-      </Link>
+      <a href={linkContacto} target="_blank" rel="noopener noreferrer" className="btn-ghost">
+        <Icon name="logos:whatsapp-icon" size={18} /> Contáctanos
+      </a>
     </div>
   );
 }

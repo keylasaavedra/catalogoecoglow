@@ -16,7 +16,7 @@ export default async function Home({
   return (
     <main className="min-h-screen">
       <MarcaHeader />
-      <BarraAcciones />
+      <BarraAcciones vendedorSlug={v ?? null} />
       <CatalogoGrid vendedorSlug={v ?? null} />
       <Pie />
     </main>
