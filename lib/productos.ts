@@ -12,7 +12,6 @@ import type { Producto } from "./tipos";
  * ================================================================
  */
 const EXTRAS = [
-  "Sin amoníaco",
   "Listo para usar, sin mezclas",
   "No mancha la piel",
   "Rinde para varias aplicaciones",
