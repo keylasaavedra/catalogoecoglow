@@ -5,6 +5,7 @@ import { Icon } from "@/components/ui/Icon";
 import { FotoProducto } from "@/components/catalogo/FotoProducto";
 import { CONFIG } from "@/lib/config";
 import { PRODUCTOS } from "@/lib/productos";
+import { usuarioInstagram } from "@/lib/marca";
 
 /** Catálogo en formato hoja para guardar como PDF (botón → window.print()). */
 export default function Imprimir() {
@@ -23,7 +24,9 @@ export default function Imprimir() {
       <div className="mb-8 text-center">
         <h1 className="font-display text-4xl font-semibold text-gradient-marca">{CONFIG.marca.negocio}</h1>
         <p className="mt-1 text-ink-soft">{CONFIG.marca.descripcion}</p>
-        {CONFIG.marca.enlace && <p className="mt-1 text-sm text-ink-mute">{CONFIG.marca.enlace}</p>}
+        {CONFIG.marca.enlace && (
+          <p className="mt-1 text-sm text-ink-mute">@{usuarioInstagram(CONFIG.marca.enlace)}</p>
+        )}
       </div>
 
       {/* Productos en hoja */}

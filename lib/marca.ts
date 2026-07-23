@@ -17,3 +17,13 @@ export function estiloMarca(marca: Marca): CSSProperties {
 export function claseTema(marca: Marca): string {
   return marca.fondo === "oscuro" ? "tema-oscuro" : "tema-claro";
 }
+
+/** Usuario de Instagram limpio (sin @ ni URL) a partir de `marca.enlace`. */
+export function usuarioInstagram(enlace: string): string {
+  return enlace.replace(/^https?:\/\/(www\.)?instagram\.com\//i, "").replace(/^@/, "");
+}
+
+/** Link directo al perfil de Instagram a partir de `marca.enlace`. */
+export function urlInstagram(enlace: string): string {
+  return `https://instagram.com/${usuarioInstagram(enlace)}`;
+}

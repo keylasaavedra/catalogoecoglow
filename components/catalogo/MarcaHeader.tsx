@@ -1,5 +1,6 @@
 import { Icon } from "@/components/ui/Icon";
 import { CONFIG } from "@/lib/config";
+import { urlInstagram, usuarioInstagram } from "@/lib/marca";
 
 /** Encabezado del catálogo: logo o nombre, una línea de qué haces, y el sello 24/7. */
 export function MarcaHeader() {
@@ -29,9 +30,14 @@ export function MarcaHeader() {
           </span>
         )}
         {marca.enlace && (
-          <span className="inline-flex items-center gap-1.5">
-            <Icon name="lucide:link" size={15} /> {marca.enlace}
-          </span>
+          <a
+            href={urlInstagram(marca.enlace)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 hover:text-ink"
+          >
+            <Icon name="logos:instagram-icon" size={15} /> @{usuarioInstagram(marca.enlace)}
+          </a>
         )}
       </div>
     </header>
